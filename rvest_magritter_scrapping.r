@@ -38,3 +38,14 @@ for(i in FLTable){
 library(plyr)
 mat.df <- as.data.frame(do.call(rbind, mat))
 write.csv(mat.df, "FLTest.csv")
+
+
+
+
+library('rvest')
+url <- 'https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-01975-8'
+webpage <- read_html(url)
+article_html <- html_nodes(webpage,'article')
+#Converting the ranking data to text
+html_text(article_html)
+html_name(cast)
