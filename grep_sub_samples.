@@ -1,0 +1,11 @@
+street = c("2389 E Myronga Street NE")
+sub(x = street, pattern = "\\s((?i)Street|(?i)St\\.?)\\sNE", replacement = " St", perl=TRUE)
+
+peptide <- c("aaa(0.011)bbb(0.989)ccc","aaa(1)bbbccc","aaabbb(0.15)ccc(0.85)ddd",
+             "aaabbb(0.75)cc(0.24)ddd(0.01)")
+gsub("\\([^()]*?\\)", "", peptide)
+
+
+originalTXT<-"start abcd pat1 pat2 pat3 pat4"
+test.pat<-"pat1|pat2|pat3|(?=(?<=abcd)(.|\n)*pat4)"
+gregexpr(test.pat, originalTXT, perl=TRUE)
